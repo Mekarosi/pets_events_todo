@@ -1,0 +1,11 @@
+{
+  "name": "pets_events_todo",
+  "version": "1.0.0",
+  "description": "Pets events todo with pet manager",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mekarosi",
+  "license": "MIT"
+}
