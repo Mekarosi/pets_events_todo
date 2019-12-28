@@ -10,6 +10,8 @@ connectDB();
 // Init Middleware
 app.use(express.json({ extended: false }));
 app.use(cors());
-app.get('/', (req, res) => res.send('API Running'));
+// app.get('/', (req, res) => res.send('API Running'));
+
+app.use('/api/todos', require('./route/api/todos'));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
