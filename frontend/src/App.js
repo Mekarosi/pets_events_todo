@@ -5,6 +5,9 @@ import Create_Todo from './components/create_todo';
 import Delete_Todo from './components/delete_todo';
 import Edit_Todo from './components/edit_todo';
 import Todos_List from './components/todos_list';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class App extends Component {
   render() {
