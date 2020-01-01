@@ -9,12 +9,37 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+library.add(faEdit);
+
 class App extends Component {
   render() {
     return (
       <Router>
         <div className='container'>
-          <h2>MERN-Stack Todo App</h2>
+          <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+            <Link to='/' className='navbar-brand'>
+              <FontAwesomeIcon icon={['fas', 'edit']} />
+            </Link>
+
+            <Link to='/' className='navbar-brand'>
+              Todo App
+            </Link>
+            <div className='collapase navbar-collapse'>
+              <ul className='navbar-nav mr-auto'>
+                <li className='navbar-item'>
+                  <Link to='/' className='nav-link'>
+                    Todos
+                  </Link>
+                </li>
+                <li className='navbar-item'>
+                  <Link to='/create' className='nav-link'>
+                    Create Todo
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <br />
 
           <Route path='/' exact component={Todos_List} />
           <Route path='/edit/:id' component={Edit_Todo} />
