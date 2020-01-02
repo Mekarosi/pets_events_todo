@@ -33,6 +33,63 @@ export default class Edit_todo extends Component {
       });
   }
 
+  onChangeTodoDescription(e) {
+    this.setState({
+      todo_description: e.target.value
+    });
+  }
+
+  onChangeTodoResponsible(e) {
+    this.setState({
+      todo_responsible: e.target.value
+    });
+  }
+
+  onChangeTodoPriority(e) {
+    this.setState({
+      todo_priority: e.target.value
+    });
+  }
+
+  onChangeTodoCompleted(e) {
+    this.setState({
+      todo_completed: !this.state.todo_completed
+    });
+  }
+
+  onChangeTodoStartDate(e) {
+    this.setState({
+      todo_startdate: e.target.value
+    });
+  }
+
+  onChangeTodoCompleteDate(e) {
+    this.setState({
+      todo_completeddate: e.target.value
+    });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const obj = {
+      todo_description: this.state.todo_description,
+      todo_responsible: this.state.todo_responsible,
+      todo_priority: this.state.todo_priority,
+      todo_completed: this.state.todo_completed,
+      todo_startdate: this.state.todo_startdate,
+      todo_completeddate: this.state.todo_completeddate
+    };
+    console.log(obj);
+    axios
+      .post(
+        'http://localhost:5555/todos/update/' + this.props.match.params.id,
+        obj
+      )
+      .then(res => console.log(res.data));
+
+    this.props.history.push('/');
+  }
+
   render() {
     return (
       <div>
