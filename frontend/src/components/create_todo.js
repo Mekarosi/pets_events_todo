@@ -72,16 +72,16 @@ class Create_todo extends Component {
     };
 
     axios
-      .post('http://localhost:5555/todos/add', newTodo)
+      .post('http://localhost:4000/todos/add', newTodo)
       .then(res => console.log(res.data));
 
     this.setState({
-      todo_description: this.state.todo_description,
-      todo_responsible: this.state.todo_responsible,
-      todo_priority: this.state.todo_priority,
-      todo_startdate: this.state.todo_startdate,
-      todo_completeddate: this.state.todo_completeddate,
-      todo_completed: this.state.todo_completed
+      todo_description: '',
+      todo_responsible: '',
+      todo_priority: '',
+      todo_startdate: '',
+      todo_completeddate: '',
+      todo_completed: false
     });
   }
 
