@@ -72,7 +72,7 @@ class Create_todo extends Component {
     };
 
     axios
-      .post('http://localhost:4000/todos/add', newTodo)
+      .post('http://localhost:5555/todos/add', newTodo)
       .then(res => console.log(res.data));
 
     this.setState({
