@@ -17,7 +17,7 @@ class App extends Component {
       <Router>
         <div className='container'>
           <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-            <Link to='/' className='navbar-brand'>
+            <Link to='/create' className='navbar-brand'>
               <FontAwesomeIcon icon={['fas', 'edit']} />
             </Link>
 

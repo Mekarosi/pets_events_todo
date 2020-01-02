@@ -4,6 +4,13 @@ import axios from 'axios';
 class Delete_todo extends Component {
   constructor(props) {
     super(props);
+
+    this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
+    this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
+    this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
+    this.onChangeTodoCompleted = this.onChangeTodoCompleted.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
     this.state = {
       todo_description: '',
       todo_responsible: '',
