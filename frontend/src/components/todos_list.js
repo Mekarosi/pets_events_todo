@@ -38,7 +38,7 @@ class Todos_list extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:4000/todos/')
+      .get('http://localhost:4000/api/todos/')
       .then(response => {
         this.setState({ todos: response.data });
       })
