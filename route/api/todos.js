@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const config = require('config');
+require('dotenv').config();
 const Todo = require('../../models/Todo');
+
+//@route  GET api/todos
+//@desc   List all todos
 
 router.get('/', (req, res) => {
   Todo.find((err, todos) => {
@@ -12,6 +16,9 @@ router.get('/', (req, res) => {
     }
   });
 });
+
+//@route  POST api/todos/add
+//@desc   Create new todo
 
 router.post('/add', async (req, res) => {
   try {
@@ -24,6 +31,9 @@ router.post('/add', async (req, res) => {
     res.status(400).send('adding new todo failed');
   }
 });
+
+//@route  GET api/todos/:id
+//@desc   Find todo by id
 
 router.get('/:id', async (req, res) => {
   try {
@@ -38,6 +48,9 @@ router.get('/:id', async (req, res) => {
     console.error(err.message);
   }
 });
+
+// @route   POST api/todos/update/:id
+// @desc    Edit todo
 
 router.post('/update/:id', async (req, res) => {
   try {
@@ -60,12 +73,15 @@ router.post('/update/:id', async (req, res) => {
   }
 });
 
+// @route  DELETE api/todos/delete/:id
+// @desc   Delete todo
+
 router.delete('/delete/:id', async (req, res) => {
   try {
     await Todo.findByIdAndRemove(req.params.id, (err, todo) => {
       if (err) res.status(400).json({ msg: 'Todo not Deleted' });
       else {
-        res.status(200).json({ msg: `${req.params.id} deleted` });
+        res.status(200).json({ msg: `Todo deleted` });
       }
     });
   } catch (err) {
