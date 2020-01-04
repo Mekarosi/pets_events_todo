@@ -25,7 +25,7 @@ class Edit_todo extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:4000/todos/' + this.props.match.params.id)
+      .get('http://localhost:4000/api/todos/' + this.props.match.params.id)
       .then(response => {
         this.setState({
           todo_description: response.data.todo_description,
@@ -90,7 +90,7 @@ class Edit_todo extends Component {
     console.log(obj);
     axios
       .post(
-        'http://localhost:5555/todos/update/' + this.props.match.params.id,
+        'http://localhost:4000/api/todos/update/' + this.props.match.params.id,
         obj
       )
       .then(res => console.log(res.data));
