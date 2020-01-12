@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Pets events todo with pet manager",
   "main": "server.js",
-  "engine": {
-    "node": "10.15.3",
-    "npm": "6.4.1"
+  
   },
   "scripts": {
     "client-install": "npm install --prefix client",
