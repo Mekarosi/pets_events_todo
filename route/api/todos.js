@@ -7,7 +7,7 @@ const Todo = require('../../models/Todo');
 //@route  GET api/todos
 //@desc   List all todos
 
-router.get('*', (req, res) => {
+router.get('/', (req, res) => {
   Todo.find((err, todos) => {
     if (err) {
       console.log(err);
