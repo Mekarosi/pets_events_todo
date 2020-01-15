@@ -16,7 +16,7 @@ app.use(cors());
 // Define Route
 app.use('/api/todos', require('./route/api/todos'));
 
-// Server static asset if in production
+// Server static assess if in production
 if (process.env.NODE_ENV === 'production') {
   //set static folder
   app.use(express.static('client/build'));
