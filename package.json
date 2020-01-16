@@ -8,11 +8,8 @@
     "npm": "6.4.1"
   },
   "scripts": {
-    "frontend-install": "npm install --prefix frontend",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Mekarosi",
