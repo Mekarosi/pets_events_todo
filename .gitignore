@@ -1,7 +1,7 @@
 /node_modules
-/.pnp
-.pnp.js
-.vscode
+# /.pnp
+# .pnp.js
+# .vscode
 pseudocode.txt
 # /config/default.json
 # /coverage
