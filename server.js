@@ -20,7 +20,6 @@ app.use('/api/todos', require('./route/api/todos'));
 if (process.env.NODE_ENV === 'production') {
   //set static folder
   app.use(express.static('client/build'));
-  app.use('/src/assets', express.static(__dirname + '/src/assets/'));
 
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
